@@ -1,0 +1,102 @@
+render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.iconcontainer}></View>
+        <View style={styles.aa}>
+          <Text
+            style={{
+              color: '#394e59',
+              fontSize: 18,
+              fontWeight: 'bold',
+              marginRight: 144,
+              marginTop: 58,
+            }}>
+            Login To Your Account
+          </Text>
+        </View>
+        <View style={styles.con1}>
+          <TextInput placeholder={'Enter userID'} style={styles.txtinp1} />
+        </View>
+        <View style={styles.image}>
+          <TextInput
+            placeholder={'Enter Password'}
+            style={styles.txtinp2}></TextInput>
+        </View>
+        <View>
+          <Text style={styles.text}>Forgot Password?</Text>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.loginbutton}>
+            <Text style={styles.logintext}>Login</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+
+    backgroundColor: '#f4f7f8',
+    alignItems: 'center',
+  },
+  
+  iconcontainer: {
+    height: 96,
+    width: 96,
+    backgroundColor: '#004368',
+    borderRadius: 11.3,
+    marginTop: 63,
+    marginLeft: 144,
+    marginRight: 120,
+  },
+
+  txtinp1: {
+    borderColor: 'black',
+    borderWidth: 1,
+    width: 329,
+    marginLeft: 16,
+    marginRight: 15,
+    padding: 10,
+    marginTop: 37,
+    paddingLeft: 30,
+    borderRadius:25,
+  },
+  txtinp2: {
+    borderColor: 'black',
+    borderWidth: 1,
+    width: 329,
+    marginLeft: 16,
+    marginRight: 15,
+    padding: 10,
+    marginTop: 24,
+    paddingLeft: 30,
+    borderRadius:25,
+  },
+  text: {
+    fontSize: 15,
+    marginRight: 210,
+    marginTop: 16,
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
+    color: '#004368',
+  },
+  loginbutton: {
+    width: 328,
+    height: 40,
+    borderRadius: 24,
+    backgroundColor: '#bbb',
+    marginLeft: 16,
+    marginRight: 16,
+    marginTop: 35,
+  },
+  logintext: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    fontSize: 14,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+});

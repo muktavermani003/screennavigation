@@ -1,0 +1,129 @@
+import React, {useState} from 'react';
+import {
+  SafeAreaView,
+  View,
+  FlatList,
+  StyleSheet,
+  Text,
+  StatusBar,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+import phone from './assets/phone.png';
+import arrow from './assets/arrow.png';
+const DATA = [
+  {
+    id: 'http://surl.li/aryrj',
+    title: 'Pickup 1, Schedule for 9 AM',
+    Heading: 'Aarogya Collection Center',
+  },
+  {
+    id: 'http://surl.li/aryrj',
+    title: 'Pickup 2, Schedule for 11 AM',
+    Heading: 'Samvedna Collection Center',
+  },
+  {
+    id: 'http://surl.li/aryrj',
+    title: 'Delivery Schedule for 12 PM',
+    Heading: 'Veda Lab',
+  },
+  {
+    id: 'http://surl.li/aryrj',
+    title: 'END YOUR RIDE',
+    Heading: '',
+  },
+];
+
+const screen2 = () => {
+  // const renderItem = ({ item }) => (
+  //   <Item title={item.title} />
+  const [image, setImage] = useState(false);
+  // );
+
+  const onChangeImage = () => {
+    setImage(!image);
+  };
+  const Item = ({item}) => (
+    <View style={styles.container2}>
+      <View style={styles.container1}>
+        <TouchableOpacity activeOpacity={0.8} onPress={onChangeImage}>
+          <Image
+            style={styles.tikk}
+            source={image ? phone : {uri: 'http://surl.li/aryrj'}}
+          />
+        </TouchableOpacity>
+        <Text style={styles.boxtext}>{item.title}</Text>
+        <View style={styles.images}>
+          <Image style={styles.phone} source={phone} />
+          <Image style={styles.arrow} source={arrow} />
+        </View>
+      </View>
+      <View>
+        <Text style={styles.boxtext1}>{item.Heading}</Text>
+      </View>
+    </View>
+  );
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <FlatList data={DATA} renderItem={Item} />
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'grey',
+  },
+  item: {
+    marginVertical: 20,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 15,
+    marginTop: 0,
+  },
+  container1: {
+    //flex: 2,
+    flexDirection: 'row',
+  },
+  boxtext: {
+    marginTop: 0,
+  },
+  images: {
+    flexDirection: 'row',
+  },
+  boxtext1: {
+    marginTop: 20,
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+
+  tikk: {
+    height: 30,
+    width: 30,
+  },
+  phone: {
+    height: 14,
+    width: 14,
+    marginLeft: 10,
+  },
+
+  endbutton: {
+    marginHorizontal: 20,
+  },
+  container2: {
+    flex: 1,
+    paddingVertical: 20,
+    paddingHorizontal: 20,
+    backgroundColor: 'white',
+    margin: 8,
+  },
+  arrow: {
+    width: 20,
+    height: 20,
+  },
+});
+
+export default screen2;

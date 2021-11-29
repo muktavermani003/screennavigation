@@ -1,0 +1,119 @@
+import React from 'react';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image } from 'react-native';
+
+const DATA = [
+  {
+    id: '1',
+    title: 'Pickup 1, Schedule for 9 AM',
+  },
+  {
+    id: '2',
+    title: 'Pickup 2, Schedule for 9 AM',
+  },
+  {
+    id: '3',
+    title: 'Pickup 3, Schedule for 9 AM',
+  },
+  {
+    id: '4',
+    title: 'Pickup 4, Schedule for 9 AM',
+  },
+  {
+    id: '5',
+    title: 'Pickup 5, Schedule for 9 AM',
+  },
+
+];
+
+
+
+const screen2 = () => {
+  // const renderItem = ({ item }) => (
+  //   <Item title={item.title} />
+
+  // );
+  const Item = ({ item }) => (
+
+    <View>
+      <View style={styles.container1}>
+
+      </View>
+      <Text >{item.id}</Text>
+      <View>
+        <Text style={styles.boxtext}>{item.title}</Text>
+
+        <View>
+          <Text style={styles.boxtext}>Pickup 2, Schedule for 10 AM</Text>
+        </View>
+      </View>
+
+    </View>
+
+
+  );
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={DATA}
+        renderItem={Item}
+
+      />
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 2,
+    paddingHorizontal: 90
+  },
+  item: {
+    backgroundColor: 'grey',
+    padding: 5,
+    marginVertical: 20,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 15,
+    marginTop: 0
+  },
+  container1: {
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    paddingVertical: 20,
+    paddingHorizontal: 20
+  },
+  boxtext: {
+    marginTop: 30,
+
+  }
+});
+
+export default screen2;
+
+
+import { createStackNavigator } from '@react-navigation/stack';
+import Screen1 from "./Screen1";
+import Screen2 from "./Screen2";
+
+
+
+const Stack = createStackNavigator();
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator >
+        <Stack.Screen name="Screen1" component={Screen1} />
+        <Stack.Screen name="Screen2" component={Screen2} />
+      </Stack.Navigator>
+    </NavigationContainer>
+
+  );
+}
+export default App;
+
+
+
+
+

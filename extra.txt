@@ -1,0 +1,121 @@
+export default class Screen2 extends Component{
+
+    render(){
+        return(
+            /*<View style={styles.container}>
+                <Text style={{fontSize:20,color:"black",alignContent:"center"}}>Welcome {this.props.route.params.P1}</Text>
+                <FlatList
+                numColumns={1}
+                data= {name1List}
+                renderItem={({item})=>(
+                <Text>{item.head}</Text>
+                
+                )}
+                />
+                </View> */
+
+            <View style={styles.container}>
+                  <View style={styles.firstContainer}>
+                      
+                  <Text style={{ marginLeft:40,marginTop:5}}> Pickup. Schedule for 9 AM</Text>
+                  <Image style={{width:30,height:30,marginTop:-25}}
+                      source={require('./assets/coltick.png')}/>
+                 <Text style={styles.innertxt}>Aarogya Collection Centre</Text>
+                 <Image style={{width:30,height:30,marginLeft:280,marginTop:-30}}
+                      source={require('./assets/phone.png')}/>
+                </View>
+                    <View style={styles.secondContainer}>
+                    <Text style={{ marginLeft:40,margineTop:15}}>Pickup2 ,Schedule for 10 AM</Text>
+                    <Image style={{width:30,height:30,marginTop:-25}}
+                      source={require('./assets/tick.png')}/>
+                       <Text style={styles.innerttxt}>Samvedna Collection Centre</Text>
+                     <Image style={{width:30,height:30,marginLeft:280,marginTop:-30}}
+                      source={require('./assets/phone.png')}/> 
+                      <Text style={{marginLeft:60,marginTop:50,fontWeight:"bold"}}>Batch Picked  0/2</Text>
+                      <Text style={{marginLeft:60,fontWeight:"bold"}}>Samples Picked  0/13</Text>
+                </View>
+                    <View style={styles.thirdContainer}>
+                    <Text style={{marginLeft:40}}>Delivery ,Schedule for 12:00 PM</Text>
+                    <Image style={{width:30,height:30,marginTop:-25}}
+                      source={require('./assets/tick.png')}/>
+                    <Text style={styles.inner3txt}>Veda Lab</Text>
+                    <Image style={{width:30,height:30,marginLeft:280,marginTop:-30}}
+                      source={require('./assets/phone.png')}/> 
+
+                </View>
+                <View style={styles.fourthContainer}>
+                <Image style={{width:30,height:30,marginTop:5}}
+                      source={require('./assets/tick.png')}/>
+                    <Text style={styles.ftxt}>End your ride</Text>
+                    <TouchableOpacity style={styles.buttonContainer}>
+                        <Text >End Ride</Text>
+                    </TouchableOpacity>
+                    
+                </View>
+            </View>
+        )
+    }
+}
+const styles=StyleSheet.create({
+container:{
+    flex:1
+},
+firstContainer:{
+    flex:0.2,
+    backgroundColor:"grey",
+    marginTop:10,
+},
+secondContainer:{
+    flex:0.3,
+    backgroundColor:"grey",
+    marginTop:10,
+},
+thirdContainer:{
+    flex:0.15,
+    backgroundColor:"grey",
+    marginTop:10,
+},
+innertxt:{
+    fontWeight:"bold",
+    fontSize:20,
+    marginLeft:15
+},
+inner3txt:{
+    fontWeight:"bold",
+    fontSize:20,
+    marginLeft:55
+},
+fourthContainer:{
+    flex:0.3,
+    backgroundColor:"grey",
+    marginTop:10,
+},
+ftxt:{
+    fontWeight:"bold", 
+    marginLeft:45,
+  marginTop:-20,
+    fontSize:20,
+},
+innerttxt:{
+    fontWeight:"bold",
+    fontSize:20,
+    marginLeft:15,
+    marginTop:10
+},
+buttonContainer:{
+    backgroundColor:"#0E86D4",
+    alignItems:"center",
+    borderRadius:10,
+    height:40,
+    width:200,
+    justifyContent:"center",
+    marginLeft:80,
+    marginTop:30
+}
+})
+
+ <View>
+      <Text>Pickup 2, Schedule for 10 AM</Text>
+      <Image/>
+      <Image/>
+  </View>

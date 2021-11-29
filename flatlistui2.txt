@@ -1,0 +1,161 @@
+import React from 'react';
+import {
+  SafeAreaView,
+  View,
+  FlatList,
+  StyleSheet,
+  Text,
+  StatusBar,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+import { Header } from 'react-native/Libraries/NewAppScreen';
+
+const DATA = [
+  
+  {
+    title: 'Pickup 1, Schedule for 9 AM',
+    title2: 'Aaroyagya Collection Center',
+    viewAdd:"view Address",
+    tBatch:2,
+    TSamples:13,
+    Picked:0,
+    Picked2:5
+  },
+  {
+    title: 'Pickup 2, Schedule for 10 AM',
+    title2: 'Samvedna Collection Center',
+    viewAdd:"view Address",
+    tBatch:3,
+    TSamples:23,
+    Picked:1,
+    Picked2:0
+  },
+  {
+    title: 'Delivery , Schedule for 12 PM',
+    title2: 'Veda Lab',
+    viewAdd:"view Address",
+    tBatch:7,
+    TSamples:13,
+    Picked:2,
+    Picked2:6
+  },
+];
+
+const App = () => {
+  // const renderItem = ({ item }) => (
+  //   <Item title={item.title} />
+
+  // );
+
+  const Item = ({item}) => (
+    
+    <View style={styles.container}>
+    
+      <View style={styles.container1}>
+     
+        <Text style={styles.boxtext}>{item.title}</Text>
+        <Text style={styles.boxtext2}>{item.title2}</Text>
+        <Image style={styles.image}source={require('./assets/darrow.jpg')} />
+        <View style={styles.innerCont}> 
+        <Text style={styles.boxtext1}>Total Batch  {item.tBatch}</Text>
+        <Text style={styles.boxtext1}>Picked {item.Picked}</Text>
+      
+        </View>
+        <View style={styles.innerCont2}>
+        <Text style={styles.boxtext1}>Total Samples  {item.TSamples}</Text>
+        <Text style={styles.boxtext1}>Picked  {item.Picked2}</Text>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttontext}>Mark Pick-Up</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+    
+  );
+
+  return (
+  
+  <FlatList data={DATA} renderItem={Item} />
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    borderRadius:24,
+    backgroundColor:'#ffffff',
+    margin:8
+  },
+  container1: {
+    marginLeft: 40,
+    backgroundColor:"#EEADE",
+    marginLeft:16,
+    marginRight:16,
+  },
+  item: {
+    backgroundColor: 'grey',
+    padding: 5,
+    marginVertical: 20,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 15,
+    marginTop: 0,
+  },
+
+  boxtext: {
+    fontSize:15,
+    marginTop: 30,
+    color:'#48585f'
+  },
+  innerCont:{
+    flexDirection:"row",
+    justifyContent:"space-between"
+      },
+  innerCont2:{
+  
+flexDirection:"row",
+fontSize:14,
+justifyContent:"space-between"
+
+  },
+  boxtext1: {
+    marginTop: 30,
+    fontSize:16,
+    color:"#394e59"
+  },
+  boxtext2: {
+    color:'#394e59',
+    fontSize:20,
+    fontWeight:"bold"
+    
+  },
+  button:{
+backgroundColor:'#fff',
+borderRadius:24,
+width:264,
+height:40,
+borderWidth:2,
+borderColor:'#bbb',
+marginLeft:30,
+marginTop:20,
+  },
+  buttontext:{
+    fontSize:16,
+    fontWeight:"bold",
+    textAlign:"center",
+    color:'#bbb',
+    paddingTop:10
+  },
+  image:{
+width:5,
+height:5,
+marginLeft:20
+ }
+  
+});
+
+export default App;
